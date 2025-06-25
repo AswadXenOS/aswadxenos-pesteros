@@ -1,3 +1,79 @@
+## AswadXenOS PesterOS: Full Auto‑Setup 100%
+
+**Direktori Projek**: `~/aswadxenos-pesteros`
+
+```
+aswadxenos-pesteros/
+├── setup.sh                      # Auto‑install & start all services
+├── launcher.sh                   # Opens Telegram bot URL
+├── .env                          # Telegram & OpenAI keys
+├── package.json                  # Node.js project manifest
+├── invite-github.js              # (Optional) GitHub invite script
+│
+├── bot/                          # Telegram bot
+│   ├── telegram-bot.js           # Main bot logic
+│   └── commands/                 # Bot command handlers
+│       ├── start.js
+│       ├── status.js
+│       ├── scan.js
+│       ├── inject.js
+│       └── tools.js
+│
+├── ewallet/                      # eWallet backend
+│   └── server.js                 # Express server stub
+│
+├── plugin/                       # Plugin runtime loader
+│   ├── loader.js                 # Loads all scripts in runtime/
+│   └── runtime/                  # Individual plugin scripts
+│       ├── wifi-hack.sh
+│       ├── api-spoof.sh
+│       └── proxy-injector.sh
+│
+├── multi-agent/                  # AI agent stubs
+│   ├── agent-controller.js
+│   ├── deploy-agent.js
+│   ├── inject-scheduler.js
+│   └── intelligence-report.js
+│
+├── wormgpt-fraoudgpt/            # AI core stub
+│   └── worm-core.js
+│
+├── telco-tools/                  # Device hack tools
+│   ├── adb-root.sh
+│   ├── frp-bypass.sh
+│   └── imei-unlock.sh
+│
+├── hacking-tools/                # Pentest tool stubs
+│   ├── sqlmap-auto.sh
+│   ├── hydra-run.sh
+│   ├── metasploit-auto.sh
+│   └── burpsuite-ui.sh
+│
+├── security/                     # Security & watchdog
+│   ├── guardian.js
+│   ├── firewall.js
+│   ├── anti-detect.js
+│   └── watchdog/                 # Auto‑repair loop
+│       ├── autofix-repair.js
+│       ├── checker.sh
+│       └── service-loop.sh
+│
+├── admin-cli/                    # SuperAdmin CLI
+│   ├── superadmin-cli.js
+│   ├── audit-viewer.js
+│   └── reset-user.js
+│
+└── logs/                         # Log files
+    ├── system.log
+    ├── plugin.log
+    ├── wallet.log
+    ├── bot.log
+    └── agent.log
+```
+
+### 1. `setup.sh` (Executable)
+
+````bash
 #!/data/data/com.termux/files/usr/bin/bash
 set -e
 
@@ -83,3 +159,4 @@ bot.onText(/\/tools/, msg => bot.sendMessage(msg.chat.id,
 // /help
 bot.onText(/\/help/, msg => bot.sendMessage(msg.chat.id,
   "Commands: /start, /status, /scan <t>, /inject <tool>, /tools"));
+````
